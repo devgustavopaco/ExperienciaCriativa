@@ -1,0 +1,21 @@
+{% extends "devices.html" %}
+
+{% block title %}
+    Atuadores do {{ comodo }}
+{% endblock %}
+
+{% block content %}
+    <h2>Atuadores do {{ comodo }}</h2>
+    <ul>
+        {% for atuador, valor in atuadores.items() %}
+        <li>{{ atuador }}: 
+            {% if valor == 1 %}
+                Ligado
+            {% elif valor == 0 %}
+                Desligado
+            {% endif %}
+        </li>
+        {% endfor %} pinto
+    </ul>
+    <p>Voltar para <a href="/{{ comodo | lower }}">Página do {{ comodo }}</a>.</p>
+{% endblock %}

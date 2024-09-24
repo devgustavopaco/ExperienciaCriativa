@@ -1,0 +1,21 @@
+{% extends "devices.html" %}
+
+{% block title %}
+    Sensores do {{ comodo }}
+{% endblock %}
+
+{% block content %}
+    <h2>Sensores do {{ comodo }}</h2>
+    <ul>
+        {% for sensor, valor in sensores.items() %}
+        <li>{{ sensor }}: 
+            {% if valor == 1 %}
+                Ligado
+            {% elif valor == 0 %}
+                Desligado
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+    <p>Voltar para <a href="/{{ comodo | lower }}">Página do {{ comodo }}</a>.</p>
+{% endblock %}

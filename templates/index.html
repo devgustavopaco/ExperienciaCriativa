@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Minha Casa Conectada</title>
+</head>
+<body>
+    <h1>Minha Casa Conectada</h1>
+    <h3>Escolha um cômodo:</h3>
+    <ul>
+        {% for comodo, link in comodos.items() %}
+        <li><a href="{{ link }}">{{ comodo }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

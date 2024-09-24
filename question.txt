@@ -1,0 +1,88 @@
+GET: 
+Descrição: O método GET é utilizado para solicitar dados de um servidor. 
+Ele não altera dados no servidor e a requisição é feita através da URL.
+
+Exemplo de Solicitação: GET /api/usuarios
+
+Resposta: O servidor retorna os dados solicitados, como
+ uma lista de usuários no formato JSON, HTML ou outro.
+
+ POST:
+Descrição: O método POST envia dados ao servidor para criar ou atualizar recursos.
+ Os dados são enviados no corpo da solicitação, ao contrário do GET, que usa a URL.
+
+Exemplo de Solicitação:
+ POST /api/usuarios
+Body: {
+  "nome": "Gabriel",
+  "email": "gabriel@exemplo.com"
+}
+
+PUT:
+Descrição: O método PUT é usado para atualizar ou substituir um recurso no servidor.
+ Geralmente, o cliente envia todo o recurso atualizado no corpo da solicitação.
+
+Exemplo de Solicitação:
+PUT /api/usuarios/1
+Body: {
+  "nome": "Gabriel atualizado",
+  "email": "gabriel@exemplo.com"
+}
+
+Resposta: O servidor confirma a atualização dos dados.
+
+DELETE:
+Descrição: O método DELETE remove um recurso do servidor.
+
+Exemplo de Solicitação: DELETE /api/usuarios/1
+
+Resposta: O servidor confirma a remoção do recurso.
+
+
+HEAD:
+Descrição: O método HEAD é semelhante ao GET, mas a resposta não inclui o corpo,
+ apenas os cabeçalhos. Ele é usado para obter metadados ou verificar a existência de um recurso.
+
+Exemplo de Solicitação: HEAD /api/usuarios/1
+
+Resposta: O servidor retorna os cabeçalhos, como status
+ e informações do recurso, mas sem os dados do corpo.
+
+TRACE:
+Descrição: O método TRACE retorna a solicitação que foi enviada ao servidor,
+ permitindo que o cliente veja o que o servidor recebeu.
+
+Exemplo de Solicitação: TRACE /api/usuarios/1
+
+Resposta: O servidor ecoa a requisição recebida.
+
+OPTIONS:
+
+Descrição: O método OPTIONS é usado para descrever
+ as opções de comunicação disponíveis para o recurso ou servidor.
+
+Exemplo de Solicitação: OPTIONS /api/usuarios
+
+Resposta: O servidor responde com os métodos HTTP suportados
+
+CONNECT:
+
+Descrição: O método CONNECT é utilizado para estabelecer um túnel de comunicação
+ entre o cliente e o servidor, geralmente usado para conexões seguras através de HTTPS.
+
+Exemplo de Solicitação: CONNECT exemplo.com:443
+
+Resposta: O servidor estabelece o túnel seguro.
+
+
+
+COMPARAÇÃO ENTRE ELES:
+
+GET e HEAD: são métodos de leitura, onde o HEAD retorna apenas metadados.
+
+POST, PUT e DELETE: alteram o estado no servidor: POST
+ cria novos recursos, PUT substitui existentes e DELETE remove.
+
+TRACE e OPTIONS: servem para depuração e descoberta de capacidades, não para manipular dados diretamente.
+
+CONNECT: é específico para criar conexões seguras, enquanto os outros métodos manipulam dados e recursos.

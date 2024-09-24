@@ -1,0 +1,15 @@
+{% extends "room.html" %}
+
+{% block title %}
+{{ comodo }}
+{% endblock %}
+
+{% block content %}
+<h1>Banheiro</h1>
+<ul>
+    {% for opcao, link in opcoes.items() %}
+    <li><a href="{{ link }}">{{ opcao }}</a></li>
+    {% endfor %}
+</ul>
+<p>Voltar para <a href="/">página inicial</a>.</p>
+{% endblock %}
